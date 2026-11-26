@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Advent of Code",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/aoc",
+      "args": ["${input:day}", "${input:part}", "${input:data}"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Advent of Code"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "day",
+      "type": "promptString",
+      "description": "Advent of Code day",
+      "default": "1"
+    },
+    {
+      "id": "part",
+      "type": "pickString",
+      "description": "Puzzle part",
+      "options": ["1", "2"]
+    },
+    {
+      "id": "data",
+      "type": "pickString",
+      "description": "Input file",
+      "options": ["--example", "--input"]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Advent of Code",
+      "type": "process",
+      "command": "zsh",
+      "args": ["${workspaceFolder}/scripts/build.zsh"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Advent of Code",
+      "type": "process",
+      "command": "zsh",
+      "args": [
+        "${workspaceFolder}/scripts/run.zsh",
+        "${input:day}",
+        "${input:part}",
+        "${input:data}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "day",
+      "type": "promptString",
+      "description": "Advent of Code day",
+      "default": "1"
+    },
+    {
+      "id": "part",
+      "type": "pickString",
+      "description": "Puzzle part",
+      "options": ["1", "2"]
+    },
+    {
+      "id": "data",
+      "type": "pickString",
+      "description": "Input file",
+      "options": ["--example", "--input"]
+    }
+  ]
+}
